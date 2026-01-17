@@ -134,6 +134,7 @@ body {
   width: 100%;
   font-size: 1.8rem;
   color: var(--color-heading-text);
+  text-transform: capitalize;
 }
 
 .recipe-card p {
@@ -146,7 +147,7 @@ body {
 
 /* Form: Add new recipe */
 .form-add-new-recipe {
-  width: 90%;
+  width: 95%;
   padding:1.2rem;
   margin: 1.2rem auto;
   border: .1rem solid var(--color-border);
