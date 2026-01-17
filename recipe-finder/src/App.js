@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import { Logo } from './components/Logo';
+import { SearchArea } from './components/SearchArea';
+import { RecipeArea } from './components/RecipeArea';
+import { FormAddNewRecipe } from './components/FormAddNewRecipe';
 
 const initialRecipes = [
   {
@@ -42,18 +46,12 @@ const initialRecipes = [
 export default function App() {
   const [recipes, setRecipes] = useState(initialRecipes);
   const [search, setSearch] = useState('');
-
-  // console.log(search);
-
-  // Filter list based on search query
   const filteredRecipes =
     search === ''
       ? recipes
       : recipes.filter((recipe) =>
           recipe.name.toLocaleLowerCase().includes(search)
         );
-
-  // console.log(displayedRecipes);
 
   function handleAddNewRecipe(newRecipe) {
     setRecipes((curr) => [...curr, newRecipe]);
@@ -70,137 +68,5 @@ export default function App() {
       <RecipeArea recipes={filteredRecipes} />
       <FormAddNewRecipe onAddNewRecipe={handleAddNewRecipe} />
     </div>
-  );
-}
-
-function Button({ children }) {
-  return <button className="button">{children}</button>;
-}
-
-function Logo() {
-  return (
-    <section className="logo">
-      <h1>Recipe Finder</h1>
-    </section>
-  );
-}
-
-function SearchArea({ search, onSearch }) {
-  return (
-    <section className="search-area">
-      <SearchBar search={search} onSearch={onSearch} />
-      <Button onClick={() => onSearch(search)}>Search</Button>
-    </section>
-  );
-}
-
-function SearchBar({ search, onSearch }) {
-  return (
-    <div className="search-bar">
-      <svg
-        width="16px"
-        height="16px"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-        <g
-          id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></g>
-        <g id="SVGRepo_iconCarrier">
-          {' '}
-          <path
-            d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-            stroke="#000000"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>{' '}
-        </g>
-      </svg>
-      <input
-        type="text"
-        placeholder="Search for a recipe ..."
-        value={search}
-        onChange={(evt) => onSearch(evt.target.value)}
-      />
-    </div>
-  );
-}
-
-function RecipeArea({ recipes }) {
-  return (
-    <section className="recipe-area">
-      <h2>Available Recipes</h2>
-      <div className="container">
-        {recipes.map((recipe, idx) => (
-          <div className="recipe-card" key={idx}>
-            <h3>{recipe.name}</h3>
-            <p>{recipe.description}</p>
-            <span>{recipe.cookingTime}</span>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function FormAddNewRecipe({ onAddNewRecipe }) {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [cookingTime, setCookingTime] = useState('');
-
-  function handleSubmit(evt) {
-    evt.preventDefault();
-
-    if (!name || !description || !cookingTime) return;
-
-    const newRecipe = { name, description, cookingTime };
-    onAddNewRecipe(newRecipe);
-
-    setName('');
-    setDescription('');
-    setCookingTime('');
-  }
-
-  return (
-    <form className="form-add-new-recipe" onSubmit={handleSubmit}>
-      <h2>Add new recipe</h2>
-
-      <div>
-        <label>Recipe Name</label>
-        <input
-          type="text"
-          placeholder="e.g Fufu & Egusi soup"
-          value={name}
-          onChange={(evt) => setName(evt.target.value)}
-        />
-      </div>
-
-      <div>
-        <label>Description</label>
-        <textarea
-          placeholder="List out ingredients or describe steps to prepare it..."
-          rows={5}
-          value={description}
-          onChange={(evt) => setDescription(evt.target.value)}
-        ></textarea>
-      </div>
-
-      <div>
-        <label>Cooking time</label>
-        <input
-          type="text"
-          placeholder="e.g 60 min"
-          value={cookingTime}
-          onChange={(evt) => setCookingTime(evt.target.value)}
-        />
-      </div>
-
-      <Button>Add Recipe</Button>
-    </form>
   );
 }
