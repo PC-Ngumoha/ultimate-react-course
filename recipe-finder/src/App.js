@@ -41,16 +41,33 @@ const initialRecipes = [
 
 export default function App() {
   const [recipes, setRecipes] = useState(initialRecipes);
+  const [search, setSearch] = useState('');
+
+  // console.log(search);
+
+  // Filter list based on search query
+  const filteredRecipes =
+    search === ''
+      ? recipes
+      : recipes.filter((recipe) =>
+          recipe.name.toLocaleLowerCase().includes(search)
+        );
+
+  // console.log(displayedRecipes);
 
   function handleAddNewRecipe(newRecipe) {
     setRecipes((curr) => [...curr, newRecipe]);
   }
 
+  function handleSearch(value) {
+    setSearch(value);
+  }
+
   return (
     <div className="app">
       <Logo />
-      <SearchArea />
-      <RecipeArea recipes={recipes} />
+      <SearchArea search={search} onSearch={handleSearch} />
+      <RecipeArea recipes={filteredRecipes} />
       <FormAddNewRecipe onAddNewRecipe={handleAddNewRecipe} />
     </div>
   );
@@ -68,16 +85,16 @@ function Logo() {
   );
 }
 
-function SearchArea() {
+function SearchArea({ search, onSearch }) {
   return (
     <section className="search-area">
-      <SearchBar />
-      <Button>Search</Button>
+      <SearchBar search={search} onSearch={onSearch} />
+      <Button onClick={() => onSearch(search)}>Search</Button>
     </section>
   );
 }
 
-function SearchBar() {
+function SearchBar({ search, onSearch }) {
   return (
     <div className="search-bar">
       <svg
@@ -104,7 +121,12 @@ function SearchBar() {
           ></path>{' '}
         </g>
       </svg>
-      <input type="text" placeholder="Search for a recipe ..." />
+      <input
+        type="text"
+        placeholder="Search for a recipe ..."
+        value={search}
+        onChange={(evt) => onSearch(evt.target.value)}
+      />
     </div>
   );
 }
@@ -137,7 +159,6 @@ function FormAddNewRecipe({ onAddNewRecipe }) {
     if (!name || !description || !cookingTime) return;
 
     const newRecipe = { name, description, cookingTime };
-    // console.log(newRecipe);
     onAddNewRecipe(newRecipe);
 
     setName('');
