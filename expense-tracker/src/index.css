@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --color-blue: #0673e0;
+  --color-gray-light: #dee1e6;
+  --color-gray-dark: #565d6d;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --color-bg-btn: var(--color-blue);
+  --color-border: var(--color-gray-light);
+  --color-normal-text: var(--color-gray-dark);
+  --color-text-on-btn: var(--color-white);
+  --color-heading-text: var(--color-black);
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Inter", sans-serif;
+  color: var(--color-normal-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 80%;
+  max-width: 1000px;
+  height: fit-content;
+}
+
+/* NAVBAR */
+.navbar {
+  padding: 1.2rem;
+  width: 100%;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar span {
+  font-size: 2.5rem;
+  color: var(--color-heading-text);
+  letter-spacing: .18rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+/* DASHBOARD */
+.dashboard {
+  margin: 1rem 0;
+  width: 100%;
+  height: fit-content;
+  padding: 2rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.dashboard span {
+  font-size: 1.3rem;
+  letter-spacing: .2rem;
+  display: block;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.dashboard h1 {
+  font-size: 4.2rem;
+  color: var(--color-heading-text);
+  letter-spacing: .08rem;
+}
+
+/* FORM ADD NEW EXPENSE */
+.form-add-new-expense {
+  width: 100%;
+  height: fit-content;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.form-add-new-expense h2 {
+  color: var(--color-heading-text);
+  text-transform: capitalize;
+  margin: 1.2rem 0;
+  letter-spacing: .2rem;
+  font-size: 2.1rem;
+}
+
+.form-add-new-expense .input-field {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+.form-add-new-expense .input-field label {
+  color: var(--color-heading-text);
+  letter-spacing: .13rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+.form-add-new-expense .input-field input,
+.form-add-new-expense .input-field select {
+  padding: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+}
+
+.form-add-new-expense .input-field input:focus,
+.form-add-new-expense .input-field select:focus {
+  outline: 1px solid var(--color-normal-text);
+}
+
+.form-add-new-expense .input-field select {
+  appearance: none;
+  color: var(--color-normal-text);
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-transform: capitalize;
+}
+
+.form-add-new-expense button {
+  width: 100%;
+  height: fit-content;
+  margin: 1.2rem 0;
+  text-transform: capitalize;
+  font-weight: 800;
+  letter-spacing: .25rem;
+  font-size: 1.3rem;
+  padding: 1.3rem;
+  border: none;
+  border-radius: 5px;
+  color: var(--color-text-on-btn);
+  background-color: var(--color-bg-btn);
+}
