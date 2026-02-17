@@ -1,5 +1,6 @@
 import styles from './CountryItem.module.css';
 import PropTypes from 'prop-types';
+// import { convertToEmoji } from '../utils';
 
 function CountryItem({ country }) {
   return (
