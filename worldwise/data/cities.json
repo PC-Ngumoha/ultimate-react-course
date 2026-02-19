@@ -59,54 +59,6 @@
         "lng": 7.398574
       },
       "id": "91527460"
-    },
-    {
-      "id": "61d7",
-      "cityName": "Baltanas",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2026-02-19T00:37:59.263Z",
-      "notes": "Wonderful vacation spot",
-      "position": {
-        "lat": "41.918628865183045",
-        "lng": "-4.240722656250001"
-      }
-    },
-    {
-      "id": "b36a",
-      "cityName": "Naima",
-      "country": "Algeria",
-      "emoji": "🇩🇿",
-      "date": "2026-02-19T00:41:14.890Z",
-      "notes": "Desert Oasis",
-      "position": {
-        "lat": "34.79576153473033",
-        "lng": "1.7358398437500002"
-      }
-    },
-    {
-      "id": "5805",
-      "cityName": "Shagari",
-      "country": "Nigeria",
-      "emoji": "🇳🇬",
-      "date": "2026-02-19T00:44:30.416Z",
-      "notes": "Nice town in the northern hinterland.",
-      "position": {
-        "lat": "12.576009912063801",
-        "lng": "5.223999023437501"
-      }
-    },
-    {
-      "id": "d5a2",
-      "cityName": "Anka",
-      "country": "Nigeria",
-      "emoji": "🇳🇬",
-      "date": "2026-02-19T00:47:32.081Z",
-      "notes": "Another lovely part of Nigeria.",
-      "position": {
-        "lat": "12.098409789924855",
-        "lng": "5.7403564453125"
-      }
     }
   ]
 }
