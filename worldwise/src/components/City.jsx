@@ -26,7 +26,7 @@ function City() {
     [id]
   );
 
-  const { cityName, emoji, date, notes } = currentCity;
+  const { cityName, emoji, date, notes, country } = currentCity;
 
   if (isLoading) return <Spinner />;
 
@@ -54,7 +54,7 @@ function City() {
       <div className={styles.row}>
         <h6>Learn more</h6>
         <a
-          href={`https://en.wikipedia.org/wiki/${cityName}`}
+          href={`https://en.wikipedia.org/wiki/${cityName},_${country}`}
           target="_blank"
           rel="noreferrer"
         >

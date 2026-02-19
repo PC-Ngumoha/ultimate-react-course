@@ -10,7 +10,7 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
       "cityName": "Madrid",
@@ -22,7 +22,7 @@
         "lat": 40.46635901755316,
         "lng": -3.7133789062500004
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
       "cityName": "Berlin",
@@ -34,7 +34,7 @@
         "lat": 52.53586782505711,
         "lng": 13.376933665713324
       },
-      "id": 98443197
+      "id": "98443197"
     },
     {
       "cityName": "Lagos",
@@ -46,7 +46,7 @@
         "lat": 6.5243793,
         "lng": 3.3792057
       },
-      "id": 48291736
+      "id": "48291736"
     },
     {
       "cityName": "Abuja",
@@ -58,7 +58,55 @@
         "lat": 9.0764785,
         "lng": 7.398574
       },
-      "id": 91527460
+      "id": "91527460"
+    },
+    {
+      "id": "61d7",
+      "cityName": "Baltanas",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-02-19T00:37:59.263Z",
+      "notes": "Wonderful vacation spot",
+      "position": {
+        "lat": "41.918628865183045",
+        "lng": "-4.240722656250001"
+      }
+    },
+    {
+      "id": "b36a",
+      "cityName": "Naima",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2026-02-19T00:41:14.890Z",
+      "notes": "Desert Oasis",
+      "position": {
+        "lat": "34.79576153473033",
+        "lng": "1.7358398437500002"
+      }
+    },
+    {
+      "id": "5805",
+      "cityName": "Shagari",
+      "country": "Nigeria",
+      "emoji": "🇳🇬",
+      "date": "2026-02-19T00:44:30.416Z",
+      "notes": "Nice town in the northern hinterland.",
+      "position": {
+        "lat": "12.576009912063801",
+        "lng": "5.223999023437501"
+      }
+    },
+    {
+      "id": "d5a2",
+      "cityName": "Anka",
+      "country": "Nigeria",
+      "emoji": "🇳🇬",
+      "date": "2026-02-19T00:47:32.081Z",
+      "notes": "Another lovely part of Nigeria.",
+      "position": {
+        "lat": "12.098409789924855",
+        "lng": "5.7403564453125"
+      }
     }
   ]
 }
