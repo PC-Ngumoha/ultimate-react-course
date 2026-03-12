@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext, useMemo } from 'react';
 import { faker } from '@faker-js/faker';
 
 function createRandomPost() {
@@ -34,19 +34,21 @@ function PostProvider({ children }) {
     setPosts([]);
   }
 
-  return (
-    <PostContext.Provider
-      value={{
-        posts: searchedPosts,
-        onAddPost: handleAddPost,
-        onClearPosts: handleClearPosts,
-        searchQuery,
-        setSearchQuery,
-      }}
-    >
-      {children}
-    </PostContext.Provider>
-  );
+  // Memoizing the context value
+  // Avoid wasted re-renders triggered by the repeated recreation of
+  // the context value.
+
+  const value = useMemo(() => {
+    return {
+      posts: searchedPosts,
+      onAddPost: handleAddPost,
+      onClearPosts: handleClearPosts,
+      searchQuery,
+      setSearchQuery,
+    };
+  }, [searchedPosts, searchQuery]);
+
+  return <PostContext.Provider value={value}>{children}</PostContext.Provider>;
 }
 
 // Custom Hook: For Consuming the context.
